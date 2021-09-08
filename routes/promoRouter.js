@@ -23,7 +23,7 @@ promoRouter
       .catch((err) => next(err));
   })
 
-  .post(authenticate.verifyUser, (req, res, next) => {
+  .post(authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
     Promotions.create(req.body)
       .then(
         (promotion) => {
@@ -37,22 +37,26 @@ promoRouter
       .catch((err) => next(err));
   })
 
-  .put(authenticate.verifyUser, (req, res, next) => {
+  .put(authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
     res.end("Put operation not supported");
   })
 
-  .delete(authenticate.verifyUser, (req, res, next) => {
-    Promotions.remove({})
-      .then(
-        (resp) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(resp);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
+  .delete(
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res, next) => {
+      Promotions.remove({})
+        .then(
+          (resp) => {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json");
+            res.json(resp);
+          },
+          (err) => next(err)
+        )
+        .catch((err) => next(err));
+    }
+  );
 
 promoRouter
   .route("/:promoId")
@@ -68,13 +72,13 @@ promoRouter
       )
       .catch((err) => next(err));
   })
-  .post(authenticate.verifyUser, (req, res, next) => {
+  .post(authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
     res.statusCode = 403;
     res.end(
       "post operation is not supported on /promotions/" + req.params.promoId
     );
   })
-  .put(authenticate.verifyUser, (req, res, next) => {
+  .put(authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
     Promotions.findByIdAndUpdate(
       req.params.promoId,
       {
@@ -94,17 +98,21 @@ promoRouter
       )
       .catch((err) => next(err));
   })
-  .delete(authenticate.verifyUser, (req, res, next) => {
-    Promotions.findByIdAndRemove(req.params.promoId)
-      .then(
-        (resp) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(resp);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
+  .delete(
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res, next) => {
+      Promotions.findByIdAndRemove(req.params.promoId)
+        .then(
+          (resp) => {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json");
+            res.json(resp);
+          },
+          (err) => next(err)
+        )
+        .catch((err) => next(err));
+    }
+  );
 
 module.exports = promoRouter;
