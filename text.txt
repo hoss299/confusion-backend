@@ -52,12 +52,34 @@ dish example to use in post request :
       ]
     }
 
+// {
+//       "name": "konafa",
+//       "image": "images/uthappizza.png",
+//       "category": "mains",
+//       "label": "sweet",
+//       "price": "3.9",
+//       "featured": "true",
+//       "description": "A unique combination of Indian konafa (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+//       "comments": [
+//         {
+//           "rating": 5,
+//           "comment": "Imagine all the eatables, living in conFusion!",
+        
+//         }
+//       ]
+// }
+
 
     Sami token : 55555
-    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2ODE3ZjA0MjNmODJkOGNmZjhkZGYiLCJpYXQiOjE2MzA5NjIzMjcsImV4cCI6MTYzMDk2NTkyN30.Q-X2UZpGHzp9P1TEpuik5S052yvgNEE8mFtpkuBSNA4
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2ODE3ZjA0MjNmODJkOGNmZjhkZGYiLCJpYXQiOjE2MzE3NTk4MTksImV4cCI6MTYzMTc2MzQxOX0.RuQMkObDNoK4SRmGNAlFYz_A0YauriEX-0zDmpKx3cY
 
     Ali token :  98765
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2ODE0NzA0MjNmODJkOGNmZjhkZGUiLCJpYXQiOjE2MzA5Njk3NjQsImV4cCI6MTYzMDk3MzM2NH0.P_Kdcg-z0-ZoIfsOuAjNZ0GKOyDSMhu7fTPZwT4t_OU
 
     hossam token : 12345
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM2NWY2ZWI4MzI5MDE1MTBhOWMzYmYiLCJpYXQiOjE2MzE2MzM2NTAsImV4cCI6MTYzMTYzNzI1MH0.z96O5VqpIOoPftWs3iHWHR8fv-wxU655WgnwHo1xmQg
+
+
+mehalabia id --> 6142b16d9c1aaf25dcf1c50e
+konafa id --> 61432e510c00e93f042bce60
+utapizza id --> 6142b0ca9c1aaf25dcf1c50c
